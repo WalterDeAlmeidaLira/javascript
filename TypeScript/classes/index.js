@@ -99,3 +99,107 @@ conta.setSaldo = 3000;
 console.log('saldo: ', conta.pegaSaldo);
 console.log("Pagar conta ".concat(conta.pagaConta(1000)));
 console.log("Pagar conta ".concat(conta.pagaConta(4000)));
+var Jogador = /** @class */ (function () {
+    function Jogador(nome) {
+        this.nome = nome;
+    }
+    Jogador.prototype.exibeNome = function () {
+        return "O nome do jogador \u00E9 ".concat(this.nome);
+    };
+    return Jogador;
+}());
+var jg1 = new Jogador('fulano');
+console.log(jg1.exibeNome());
+// override 
+var base = /** @class */ (function () {
+    function base() {
+    }
+    base.prototype.metodoTeste = function () {
+        console.log("exibe método da classe base");
+    };
+    return base;
+}());
+var topo = /** @class */ (function (_super) {
+    __extends(topo, _super);
+    function topo() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    topo.prototype.metodoTeste = function () {
+        var a = 10;
+        var b = 15;
+        console.log("estou sobrescrevendo um m\u00E9todo. ;) ".concat(a + b));
+    };
+    return topo;
+}(base));
+var testeSobrescrita = new topo();
+var testeSobrescrita2 = new base();
+testeSobrescrita2.metodoTeste();
+testeSobrescrita.metodoTeste();
+//VISIBILIDADE EM CLASSES
+// PUBLIC - É A VISIBILIDADE DEFAULT E PODE SER ACESSADO POR TODOS 
+//PROTECTED - ACESSÍVEL SOMENTE AS CLASSES FILHAS, AS PROPRIODADES SO PODEM SER ACESSADAS ATRAVÉS DE MÉTODOS
+//PRIVATE - SOMENTE A CLASSE PODE ACESSAR
+// PROTECTED
+var A = /** @class */ (function () {
+    function A() {
+        this.nomeClasse = 'A';
+    }
+    A.prototype.mostraNome = function () {
+        return "m\u00E9todo protegido";
+    };
+    return A;
+}());
+var B = /** @class */ (function (_super) {
+    __extends(B, _super);
+    function B() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    B.prototype.nome = function () {
+        console.log("nome da classe pai \u00E9 ".concat(this.nomeClasse));
+        console.log(this.mostraNome());
+    };
+    return B;
+}(A));
+var bTeste = new B();
+bTeste.nome();
+// private
+var ClassePrivada = /** @class */ (function () {
+    function ClassePrivada() {
+        this.nome = 'private';
+    }
+    ClassePrivada.prototype.exibirNome = function () {
+        return "nome da class \u00E9 ".concat(this.nome);
+    };
+    return ClassePrivada;
+}());
+var nC = new ClassePrivada();
+console.log(nC.exibirNome());
+//static - permite acessar propriedades e métodos sem instanciar objetos
+var Statico = /** @class */ (function () {
+    function Statico() {
+    }
+    Statico.somador = function (a, b) {
+        return a + b;
+    };
+    Statico.nome = 'stático';
+    return Statico;
+}());
+console.log(Statico.somador(1, 2));
+console.log(Statico.nome);
+// classes com generic
+var item = /** @class */ (function () {
+    function item(primeiro, segundo) {
+        this.primeiro = primeiro;
+        this.segundo = segundo;
+    }
+    Object.defineProperty(item.prototype, "exibir", {
+        get: function () {
+            return "".concat(this.primeiro, " + ").concat(this.segundo);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return item;
+}());
+var novoItem = new item('teste', 10);
+console.log(novoItem.exibir);
