@@ -175,17 +175,17 @@ var ClassePrivada = /** @class */ (function () {
 var nC = new ClassePrivada();
 console.log(nC.exibirNome());
 //static - permite acessar propriedades e métodos sem instanciar objetos
-var Statico = /** @class */ (function () {
-    function Statico() {
+var Estatico = /** @class */ (function () {
+    function Estatico() {
     }
-    Statico.somador = function (a, b) {
+    Estatico.somador = function (a, b) {
         return a + b;
     };
-    Statico.nome = 'stático';
-    return Statico;
+    Estatico.nome = 'estático';
+    return Estatico;
 }());
-console.log(Statico.somador(1, 2));
-console.log(Statico.nome);
+console.log(Estatico.somador(1, 2));
+console.log(Estatico.nome);
 // classes com generic
 var item = /** @class */ (function () {
     function item(primeiro, segundo) {

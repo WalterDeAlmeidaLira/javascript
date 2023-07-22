@@ -179,16 +179,16 @@ console.log(nC.exibirNome());
 
 //static - permite acessar propriedades e métodos sem instanciar objetos
 
-class Statico{
-    static nome: string = 'stático'
+class Estatico{
+    static nome: string = 'estático'
 
     static somador(a: number, b: number){
         return a + b
     }
 }
 
-console.log(Statico.somador(1,2))
-console.log(Statico.nome);
+console.log(Estatico.somador(1,2))
+console.log(Estatico.nome);
 
 // classes com generic
 
