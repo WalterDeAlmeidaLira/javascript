@@ -209,3 +209,40 @@ class item<T, U>{
 const novoItem = new item('teste', 10);
 
 console.log(novoItem.exibir)
+
+//propriedades como parâmetros de uma classe
+class ClasseParametros{
+    constructor(public nome: string, private preco: number){
+        this.nome = nome
+        this.preco = preco
+    }
+
+    get mostraPreco(){
+        return this.preco
+    }
+}
+
+const produto = new ClasseParametros('camisa', 24.99);
+
+console.log(produto.mostraPreco);
+
+// classes abstratas - funciona parecido com uma interface e deve conster propriedades e metodos abstratos
+
+abstract class ClasseAbstrata{
+    abstract mostraNome(): string;
+}
+
+class ExtendiClass extends ClasseAbstrata{
+    nome
+    constructor(nome: string){
+        super()
+        this.nome = nome
+    }
+
+    mostraNome(): string {
+        return `o nome da class abstract é ${this.nome}`
+    }
+}
+
+const testeAbstr = new ExtendiClass('Abstrato');
+console.log(testeAbstr.mostraNome())

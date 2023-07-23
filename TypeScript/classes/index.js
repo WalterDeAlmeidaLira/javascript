@@ -203,3 +203,42 @@ var item = /** @class */ (function () {
 }());
 var novoItem = new item('teste', 10);
 console.log(novoItem.exibir);
+//propriedades como parâmetros de uma classe
+var ClasseParametros = /** @class */ (function () {
+    function ClasseParametros(nome, preco) {
+        this.nome = nome;
+        this.preco = preco;
+        this.nome = nome;
+        this.preco = preco;
+    }
+    Object.defineProperty(ClasseParametros.prototype, "mostraPreco", {
+        get: function () {
+            return this.preco;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return ClasseParametros;
+}());
+var produto = new ClasseParametros('camisa', 24.99);
+console.log(produto.mostraPreco);
+// classes abstratas - funciona parecido com uma interface e deve conster propriedades e metodos abstratos
+var ClasseAbstrata = /** @class */ (function () {
+    function ClasseAbstrata() {
+    }
+    return ClasseAbstrata;
+}());
+var ExtendiClass = /** @class */ (function (_super) {
+    __extends(ExtendiClass, _super);
+    function ExtendiClass(nome) {
+        var _this = _super.call(this) || this;
+        _this.nome = nome;
+        return _this;
+    }
+    ExtendiClass.prototype.mostraNome = function () {
+        return "o nome da class abstract \u00E9 ".concat(this.nome);
+    };
+    return ExtendiClass;
+}(ClasseAbstrata));
+var testeAbstr = new ExtendiClass('Abstrato');
+console.log(testeAbstr.mostraNome());
