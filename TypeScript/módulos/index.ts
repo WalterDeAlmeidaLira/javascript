@@ -3,7 +3,7 @@ import saudacao from './exemplo.js'
 
 console.log(saudacao('walter'))
 
-// outra forma de importat 
+// outra forma de importar 
 import * as exportando from './exportando.js'
 
 console.log(exportando)
