@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Formulários</title>
+    </head>
+    <body>
+        <form>
+            <input type="text" name="nome" required placeholder="Digite Seu Nome Completo"/>
+            <br>
+            <br>
+            <p>Você tem carro?</p>
+            <label for="sim">Sim</label>
+            <input type="checkbox" name="carro" id="sim"/>
+            <br>
+            <br>
+            <input type="radio" name="sexo"  id="M" checked value="masc"/>Masc.
+            <input type="radio" name="sexo"  id="F" value="femin"/>Femin.
+            <input type="radio" name="sexo"  value="Outro" id="O"/>Outro
+            <br>
+            <br>
+            <label for="aniversario">Data de nascimento</label>
+            <input type="date" id="aniversario" name="aniversario" />
+            <br>
+            <br>
+            <textarea rows="6" cols="20"></textarea>
+            <br>
+            <br>
+            <label for="senha">Senha: </label>
+            <input type="password" id="senha" name="senha"/>
+            <br>
+            <br>
+            <input type="submit" value="Enviar" />
+        </form>
+    </body>
+</html>

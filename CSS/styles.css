@@ -1,0 +1,47 @@
+h1{
+    color:brown;
+}
+
+/* ESTE É UM COMENTÁRIO EM CSS */
+/*
+    ESTE 
+    É
+    UM
+    COMANTÁRIO
+    EM
+    CSS
+*/
+
+h2{
+    color: green;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* CLASSES E IDs*/
+
+#id_titulo{
+    color: blue;
+    font-size: 35px;
+}
+
+.p_text{
+    color: lightblue;
+    font-size: 25px;
+}
+
+/* CORES EM CSS*/
+
+.nome{
+    color: green;
+}
+
+.hexadecimal{
+    color: #1528cf;
+}
+
+.rgba{
+    color: rgba(177, 17, 17, 0.5);
+    font-size: 30px;
+}
+
